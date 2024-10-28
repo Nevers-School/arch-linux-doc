@@ -40,6 +40,7 @@ Hostname
 Set Root Password
     "passwd" and set a good password
 install grub using "grub-install /dev/sda"
+    configure grub using the command "grub-mkconfig -o /boot/grub/grub/cfg"
 Exit chroot using the command "exit"
 Unmount with "umount -a"
 Reboot using the command "reboot"
