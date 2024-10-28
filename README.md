@@ -39,8 +39,8 @@ Hostname
     "nano /etc/hostname" and then give it whatever name you want 
 Set Root Password
     "passwd" and set a good password
-Exit chroot using the command "exit"
 install grub using "grub-install /dev/sda"
+Exit chroot using the command "exit"
 Unmount with "umount -a"
 Reboot using the command "reboot"
 Login to the the newly created system using the default username root and the password being whatever password you set
