@@ -41,6 +41,7 @@ Set Root Password
     "passwd" and set a good password
 Exit chroot using the command "exit"
 install grub using "grub-install /dev/sda"
+Unmount with "umount -a"
 Reboot using the command "reboot"
 Login to the the newly created system using the default username root and the password being whatever password you set
 
