@@ -7,9 +7,7 @@ Download the Arch Linux ISO
 Boot the Arch Linux ISO 
     Make sure you boot the Arch Linux ISO in UEFI mode
 Based on preference set the keyboard layout and font using the commands loadkeys and setfont. I'm using US format which is the default but for the font I'm using the command "setfont ter-132b" to increase the font size.
-Connect to the internet
-    Use an ethernet cable or connect wirelessly using iwctl
-    Test connection using "ping archlinux.org" 
+
 Test the internet connection using the command "ip link" and then ping a site for example "ping archlinux.org" and to end the command use ctrl c to stop the pings
 Partition the disks 
     lsblk to show the current partitions we will be using this command repeatedly to check the following changes effects
@@ -26,16 +24,14 @@ Mount the Drives
     "mkdir -p /mnt/boot/efi" and then "mount /dev/sda1 /mnt/boot/efi"
     "swapon /dev/sda2"
     lsblk to show the changes in effect 
-Install Microcode for CPU
-    "sudo pacman -S amd-ucode" or for intel "sudo pacman -S intel-ucode"
 Installing Base systems and other essential packages 
-    "pacstrap /mnt base linux linux-firmware sof-firmware base-devel grub efibootmgr nano"
+    "pacstrap /mnt base linux linux-firmware sof-firmware base-devel grub efibootmgr nano amd-ucode"
 Generate filesystem tab 
     "genfstab /mnt" 
     "genfstab /mnt > /mnt/etc/fstab"
 Change our root and enter the installed systems
     "arch-chroot /mnt"
-Timezone: "ln -sf /usr/share/zoneinfo/America/Chicago /etc/localtime"
+Timezone: "ln -sf /usr/share/zoneinfo/America/Chicago /etc/localtime" and then "hwclock --systohc"
 Localization
     "nano etc/locale.gen" and then find #en_US.UTF-8 UTF-8 and remove the # and then save and exit the file and then use the command "locale-gen" 
     "nano /etc/locale.conf" and then write LANG=en_US.UTF-8 and then save and exit
@@ -44,7 +40,7 @@ Hostname
 Set Root Password
     "passwd" and set a good password
 Exit chroot using the command "exit"
+install grub using "grub-install /dev/sda"
 Reboot using the command "reboot"
-Login to the the newly created system using the
-default username root and the password being whatever password you set
+Login to the the newly created system using the default username root and the password being whatever password you set
 
