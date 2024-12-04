@@ -1,5 +1,4 @@
-# sluarchlinuxdoc.github.io
-Arch Linux Installation Documentation
+## Arch Linux Installation Documentation
 
 Software: VMWare Workstation Pro
 
